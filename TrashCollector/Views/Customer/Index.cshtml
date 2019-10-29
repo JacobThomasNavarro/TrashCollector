@@ -1,0 +1,100 @@
+﻿@model IEnumerable<TrashCollector.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetAdress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyCharge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupConfirmed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayNameFor(model => model.FirstName)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.LastName)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.StreetAdress)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.City)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.State)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.ZipCode)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.PickupDay)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.Balance)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.MonthlyCharge)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.PickupConfirmed)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.StartDate)
+    </td>
+    <td>
+        @Html.DisplayNameFor(model => model.EndDate)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+    }
+
+</table>
