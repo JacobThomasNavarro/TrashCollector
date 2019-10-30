@@ -49,7 +49,7 @@ namespace TrashCollector
                 }
             }
 
-            // creating Creating Manager role    
+            //creating Creating Manager role
             if (!roleManager.RoleExists("Customer"))
                 {
                     var role = new IdentityRole();
