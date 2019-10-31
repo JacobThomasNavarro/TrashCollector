@@ -172,14 +172,16 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\userscontroller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910282016344_InitialMigration.cs" />
-    <Compile Include="Migrations\201910282016344_InitialMigration.Designer.cs">
-      <DependentUpon>201910282016344_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201910311406490_Initial.cs" />
+    <Compile Include="Migrations\201910311406490_Initial.Designer.cs">
+      <DependentUpon>201910311406490_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910311435420_AddedExtraPickup.cs" />
+    <Compile Include="Migrations\201910311435420_AddedExtraPickup.Designer.cs">
+      <DependentUpon>201910311435420_AddedExtraPickup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,13 +253,18 @@
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Delete.cshtml" />
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\userscontroller\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutEmployee.cshtml" />
+    <Content Include="Views\Shared\_LayoutCustomer.cshtml" />
+    <Content Include="Views\Customer\ExtraPickup.cshtml" />
+    <Content Include="Views\Employee\AddBalance.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\CurrentBalance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -277,8 +284,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910282016344_InitialMigration.resx">
-      <DependentUpon>201910282016344_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910311406490_Initial.resx">
+      <DependentUpon>201910311406490_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910311435420_AddedExtraPickup.resx">
+      <DependentUpon>201910311435420_AddedExtraPickup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

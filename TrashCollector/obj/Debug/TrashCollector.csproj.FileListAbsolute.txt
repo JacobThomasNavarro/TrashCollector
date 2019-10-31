@@ -102,5 +102,6 @@ C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollecto
 C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.csproj.CopyComplete
 C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.dll
 C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.pdb
-C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.InitialMigration.resources
+C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.Initial.resources
 C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.csproj.GenerateResource.cache
+C:\Users\jt10n\Desktop\devCodeCamp\Week_08\Projects\TrashCollector\TrashCollector\obj\Debug\TrashCollector.Migrations.AddedExtraPickup.resources

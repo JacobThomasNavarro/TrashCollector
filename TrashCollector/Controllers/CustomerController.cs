@@ -18,7 +18,8 @@ namespace TrashCollector.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            return View(context.Customers.ToList());
+            var currentUser = context.Customers.ToList();
+            return View(currentUser);
         }
 
         // GET: Customer/Details/5
@@ -51,6 +52,7 @@ namespace TrashCollector.Controllers
             }
             catch
             {
+
                 return View();
             }
         }
@@ -76,9 +78,7 @@ namespace TrashCollector.Controllers
                 editCustomer.City = customer.City;
                 editCustomer.State = customer.State;
                 editCustomer.ZipCode = customer.ZipCode;
-                editCustomer.PickupDay = customer.PickupDay;
-                editCustomer.Balance = customer.Balance;
-                editCustomer.MonthlyCharge = customer.MonthlyCharge;
+                editCustomer.WeeklyPickupDay = customer.WeeklyPickupDay;
                 editCustomer.PickupConfirmed = customer.PickupConfirmed;
                 editCustomer.StartDate = customer.StartDate;
                 editCustomer.EndDate = customer.EndDate;
@@ -121,6 +121,37 @@ namespace TrashCollector.Controllers
             {
                 return View();
             }
+        }
+
+        // GET: Customer/Edit/5
+        public ActionResult ExtraPickup(int id)
+        {
+            var editCustomer = context.Customers.Where(c => c.Id == id).FirstOrDefault();
+            return View(editCustomer);
+        }
+
+        // POST: Customer/Edit/5
+        [HttpPost]
+        public ActionResult ExtraPickup(int id, Customer customer)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                var editCustomer = context.Customers.Where(c => c.Id == id).FirstOrDefault();
+                editCustomer.ExtraPickup = customer.ExtraPickup;
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult CurrentBalance(int id)
+        {
+            var customerDetails = context.Customers.Where(c => c.Id == id).FirstOrDefault();
+            return View(customerDetails);
         }
     }
 }

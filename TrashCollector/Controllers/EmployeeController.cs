@@ -112,5 +112,11 @@ namespace TrashCollector.Controllers
                 return View();
             }
         }
+
+        //public ActionResult AddBalance()
+        //{
+        //    var currentUser = context.Employees.
+        //    var businesses = context.Customers.Where(num => num.ZipCode == currentUser);
+        //}
     }
 }

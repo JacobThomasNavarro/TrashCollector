@@ -18,12 +18,22 @@ namespace TrashCollector.Models
         public string City { get; set; }
         public string State { get; set; }
         public double ZipCode { get; set; }
-        public DayOfWeek PickupDay { get; set; }
-        public double Balance { get; set; }
-        public double MonthlyCharge { get; set; }
-        public bool PickupConfirmed { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DayOfWeek WeeklyPickupDay { get; set; }
+        public double? Balance { get; set; }
+        public double? MonthlyCharge { get; set; }
+        public bool? PickupConfirmed { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Start Date")]
+        public DateTime? StartDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "End Date")]
+        public DateTime? EndDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Extra Pickup")]
+        public DateTime? ExtraPickup { get; set; }
 
         [ForeignKey("ApplicationUser")]
 
