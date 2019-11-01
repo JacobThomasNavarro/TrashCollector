@@ -113,10 +113,28 @@ namespace TrashCollector.Controllers
             }
         }
 
-        //public ActionResult AddBalance()
-        //{
-        //    var currentUser = context.Employees.
-        //    var businesses = context.Customers.Where(num => num.ZipCode == currentUser);
-        //}
+        public ActionResult CurrentDayPickupByZip()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode);
+            return View(customerZipCode);
+        }
+
+        public ActionResult ConfirmPickupCustomerCharge(int id, Customer customer)
+        {
+            try
+            {
+                var editCustomer = context.Customers.Where(c => c.Id == id).FirstOrDefault();
+                editCustomer.PickupConfirmed = customer.PickupConfirmed;
+                editCustomer.MonthlyCharge = customer.MonthlyCharge;
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
