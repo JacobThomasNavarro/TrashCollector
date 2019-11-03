@@ -264,8 +264,15 @@
     <Content Include="Views\Customer\ExtraPickup.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\CurrentBalance.cshtml" />
-    <Content Include="Views\Employee\CurrentDayPickupByZip.cshtml" />
     <Content Include="Views\Employee\ConfirmPickupCustomerCharge.cshtml" />
+    <Content Include="Views\Employee\Pickups.cshtml" />
+    <Content Include="Views\Employee\MondayPickup.cshtml" />
+    <Content Include="Views\Employee\TuesdayPickup.cshtml" />
+    <Content Include="Views\Employee\WednesdayPickup.cshtml" />
+    <Content Include="Views\Employee\ThursdayPickup.cshtml" />
+    <Content Include="Views\Employee\FridayPickup.cshtml" />
+    <Content Include="Views\Employee\SaturdayPickup.cshtml" />
+    <Content Include="Views\Employee\SundayPickup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,7 +18,10 @@ namespace TrashCollector.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            return View(context.Employees.ToList());
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DateTime.Today.DayOfWeek).ToList();
+            return View(customerZipCode);
         }
 
         // GET: Customer/Details/5
@@ -71,6 +74,7 @@ namespace TrashCollector.Controllers
                 // TODO: Add update logic here
                 var editEmployee = context.Employees.Where(c => c.Id == id).FirstOrDefault();
                 editEmployee.ZipCode = employee.ZipCode;
+                context.SaveChanges();
 
 
                 return RedirectToAction("Index");
@@ -113,14 +117,14 @@ namespace TrashCollector.Controllers
             }
         }
 
-        public ActionResult CurrentDayPickupByZip()
+        public ActionResult ConfirmPickupCustomerCharge(int id)
         {
-            var employeeId = User.Identity.GetUserId();
-            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode);
-            return View(customerZipCode);
+
+            var editCustomer = context.Customers.Where(c => c.Id == id).FirstOrDefault();
+            return View(editCustomer);
         }
 
+        [HttpPost]
         public ActionResult ConfirmPickupCustomerCharge(int id, Customer customer)
         {
             try
@@ -128,6 +132,7 @@ namespace TrashCollector.Controllers
                 var editCustomer = context.Customers.Where(c => c.Id == id).FirstOrDefault();
                 editCustomer.PickupConfirmed = customer.PickupConfirmed;
                 editCustomer.MonthlyCharge = customer.MonthlyCharge;
+                context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -135,6 +140,67 @@ namespace TrashCollector.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult MondayPickup()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DayOfWeek.Monday).ToList();
+            return View(customerZipCode);
+        }
+
+        public ActionResult TuesdayPickup()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DayOfWeek.Tuesday).ToList();
+            return View(customerZipCode);
+        }
+
+        public ActionResult WednesdayPickup()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DayOfWeek.Wednesday).ToList();
+            return View(customerZipCode);
+        }
+
+        public ActionResult ThursdayPickup()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DayOfWeek.Thursday).ToList();
+            return View(customerZipCode);
+        }
+
+        public ActionResult FridayPickup()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DayOfWeek.Friday).ToList();
+            return View(customerZipCode);
+        }
+
+        public ActionResult SaturdayPickup()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DayOfWeek.Saturday).ToList();
+            return View(customerZipCode);
+        }
+
+        public ActionResult SundayPickup()
+        {
+            var employeeId = User.Identity.GetUserId();
+            var employee = context.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
+            var customerZipCode = context.Customers.Where(c => c.ZipCode == employee.ZipCode && c.WeeklyPickupDay == DayOfWeek.Sunday).ToList();
+            return View(customerZipCode);
+        }
+
+        public ActionResult Pickups()
+        {
+            return View();
         }
     }
 }

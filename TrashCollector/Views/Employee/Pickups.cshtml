@@ -1,0 +1,16 @@
+﻿@model IEnumerable<TrashCollector.Models.Customer>
+
+        <h3>Select the day you would like to search for pickups!</h3>
+<table class="table">
+    <tr>
+        <td>
+            @Html.ActionLink("Monday Pickups", "MondayPickup", "Employee") |
+            @Html.ActionLink("Tuesday Pickups", "TuesdayPickup", "Employee") |
+            @Html.ActionLink("Wednesday Pickups", "WednesdayPickup", "Employee") |
+            @Html.ActionLink("Thursday Pickups", "ThursdayPickup", "Employee") |
+            @Html.ActionLink("Friday Pickups", "FridayPickup", "Employee") |
+            @Html.ActionLink("Saturday Pickups", "SaturdayPickup", "Employee") |
+            @Html.ActionLink("Sunday Pickups", "SundayPickup", "Employee")
+        </td>
+    </tr>
+</table>

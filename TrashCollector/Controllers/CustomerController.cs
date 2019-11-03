@@ -82,6 +82,7 @@ namespace TrashCollector.Controllers
                 editCustomer.PickupConfirmed = customer.PickupConfirmed;
                 editCustomer.StartDate = customer.StartDate;
                 editCustomer.EndDate = customer.EndDate;
+                context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -139,6 +140,7 @@ namespace TrashCollector.Controllers
                 // TODO: Add update logic here
                 var editCustomer = context.Customers.Where(c => c.Id == id).FirstOrDefault();
                 editCustomer.ExtraPickup = customer.ExtraPickup;
+                context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
